@@ -14,5 +14,45 @@
         <!-- Add HTML markup elements for your web site below -->
         <h1>Grade Calculator</h1>
         <p>Here are some more details.</p>
+        <button onclick="calculateGrade()">Calculate Grade</button>
     </body>
 </html>
+<script>
+    function calculateGrade(){
+        var subjects = parseInt(prompt("Enter the number of subjects"));
+        var totalMarks = 0;
+        var marks = [];
+        for (var i = 0; i < subjects; i ++){
+            var mark = parseFloat (prompt("Enter the number of subjects:"));
+            marks.push(mark);
+            totalMarks += mark;
+        }
+        var average = totalMarks / subjects;
+        var percentage = (totalMarks / (subjects * 100)) * 100;
+        var result = (average >= 40) ? "Pass" : "Fail";
+        alert("Total Marks: " + totalMarks + 
+            "\nAverage Marks: " + average.toFixed(2) + 
+            "\nPercentage: " + percentage.toFixed(2) + "%" + 
+            "\nResult: " + result);
+        
+    }
+</script>
+<div class="wrapper">
+
+	<h1>Grade Calculator</h1>
+
+	<div class="directions">Input your grades separated by commas:</div>
+
+	<input id="yourgrades" type="text" />
+	<input id="submitbutton" type="button" value="Calculate" onClick="submit();"/>
+
+	<p>Your grades from high to low:</p>
+	<div id="grades"></div>
+
+	<p>Your average grade is:</p>
+	<div id="avg_grades"></div>
+
+	<p>Your final grade is:</p>
+	<div id="final_grade"></div>
+
+</div>
