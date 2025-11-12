@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Class Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>My Weekly Class Schedule Organizer</h1>
+    </header>
+
+    <main>
+        <section class="input-form">
+            <h2>Add New Class</h2>
+            <form id="classForm">
+                <div class="form-group">
+                    <label for="courseTitle">Course Title:</label>
+                    <input type="text" id="courseTitle" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" required>
+                        <option value="">-- Select Category --</option>
+                        <option value="Lecture">Lecture</option>
+                        <option value="Discussion">Discussion</option>
+                        <option value="Lab">Lab</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location (Hall & Number):</label>
+                    <input type="text" id="location" required>
+                </div>
+
+                <div class="form-group" id="days-group">
+                    <label>Days:</label>
+                    <div class="day-checkboxes">
+                        <input type="checkbox" id="day-sun" name="day" value="Sun"> <label for="day-sun">Sun</label>
+                        <input type="checkbox" id="day-mon" name="day" value="Mon"> <label for="day-mon">Mon</label>
+                        <input type="checkbox" id="day-tue" name="day" value="Tue"> <label for="day-tue">Tue</label>
+                        <input type="checkbox" id="day-wed" name="day" value="Wed"> <label for="day-wed">Wed</label>
+                        <input type="checkbox" id="day-thu" name="day" value="Thu"> <label for="day-thu">Thu</label>
+                        <input type="checkbox" id="day-fri" name="day" value="Fri"> <label for="day-fri">Fri</label>
+                        <input type="checkbox" id="day-sat" name="day" value="Sat"> <label for="day-sat">Sat</label>
+                    </div>
+                </div>
+
+                <div class="time-duration-group">
+                    <div class="form-group start-time-group">
+                        <label for="startTime">Start Time:</label>
+                        <input type="time" id="startTime" required>
+                    </div>
+
+                    <div class="form-group duration-group">
+                        <label for="duration">Duration:</label>
+                        <select id="duration" required>
+                            <option value="50">50 min</option>
+                            <option value="90">1 hr 30 min (90 min)</option>
+                            <option value="custom">Custom (use Start/End time)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group" id="endTimeGroup" style="display:none;">
+                    <label for="endTime">End Time (for Custom):</label>
+                    <input type="time" id="endTime">
+                </div>
+
+                <button type="submit">Add Class</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <section class="schedule-container">
+            <h2>Weekly Schedule</h2>
+            <div class="schedule-grid" id="scheduleGrid">
+                <div class="time-column">
+                    <div class="cell header-cell">Time</div>
+                    </div>
+                <div class="day-column" id="Sun">
+                    <div class="cell header-cell">Sunday</div>
+                </div>
+                <div class="day-column" id="Mon">
+                    <div class="cell header-cell">Monday</div>
+                </div>
+                <div class="day-column" id="Tue">
+                    <div class="cell header-cell">Tuesday</div>
+                </div>
+                <div class="day-column" id="Wed">
+                    <div class="cell header-cell">Wednesday</div>
+                </div>
+                <div class="day-column" id="Thu">
+                    <div class="cell header-cell">Thursday</div>
+                </div>
+                <div class="day-column" id="Fri">
+                    <div class="cell header-cell">Friday</div>
+                </div>
+                <div class="day-column" id="Sat">
+                    <div class="cell header-cell">Saturday</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
