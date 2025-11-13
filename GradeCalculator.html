@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Project Title</title>
+        <title>Grade Calculator</title>
    	   <link rel="stylesheet" href="styles.css" type=”text/css”/>
         <link rel="icon" href="" type="image/x-icon" />
         <script type="text/javascript" src="script.js"></script>
@@ -29,3 +30,34 @@
 </html>
 
 
+        <h1>Grade Calculator</h1>
+        <p>Here are some more details.</p>
+    </body>
+
+<body>
+    <div class="container">
+        <div class="left_side">
+            <h1>Result</h1>
+            <div class="p_g_t">
+                <h2>Percentage - <span class="per"></span></h2>
+                <h2>Grade - <span class="gra"></span></h2>
+                <h2>Total - <span class="to"></span></h2>
+            </div>
+        </div>
+        <div class="content">
+            <div class="right_side">
+                <input type="number" id="a" placeholder="Assignments">
+                <input type="number" id="pr" placeholder="Projects">
+                <input type="number" id="Fin" placeholder="Final">
+                <input type="number" id="Mid" placeholder="Midterms">
+                <input type="number" id="par" placeholder="Participation">
+            </div>
+        </div>
+        <div class="result">
+             <button onclick="calculateGrade()">Calculate Grade</button>
+            
+             <h2></h2>
+        </div>
+    </div>
+</body>
+</html>
