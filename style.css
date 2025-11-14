@@ -10,8 +10,8 @@ body {
 }
 
 button {
-    background-color: rgb(78, 149, 236);    
-    color: white;              
+    background-color: rgb(247, 238, 135);    
+    color: rgb(158, 193, 215);              
     border: none;             
     padding: 5px 12px;         
     border-radius: 5px;         
@@ -19,7 +19,7 @@ button {
 }
 
 button:hover {
-     background-color: rgb(246, 247, 146);
+     background-color: rgb(248, 224, 67);
 }
 
 .navbar ul {
@@ -35,8 +35,8 @@ button:hover {
 
 :root {
     
-    --bg-color: #90b2fc;
-    --text-color: #375bbb;
+    --bg-color: #b0c7f8;
+    --text-color: #4285c8;
 
     --bg-color-dark-mode: #333a77;
     --text-color-dark-mode: #fff;
@@ -45,7 +45,7 @@ button:hover {
     --accent-color-medium: #684fb5;
     --accent-color-dark: #482f95;
     --accent-color-darkest: #231942;
-    --accent-color-green: #f1ec81;
+    --accent-color-yellow: #f1ec81;
 
     --error-color: #f8bbd0;
     --error-color-border: #e63946;
