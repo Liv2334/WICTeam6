@@ -35,17 +35,17 @@ button:hover {
 
 :root {
     
-    --bg-color: #a6a0cf;
-    --text-color: #231942;
+    --bg-color: #90b2fc;
+    --text-color: #375bbb;
 
-    --bg-color-dark-mode: #3e3377;
+    --bg-color-dark-mode: #333a77;
     --text-color-dark-mode: #fff;
 
     --accent-color-light: #d2cff5;
     --accent-color-medium: #684fb5;
     --accent-color-dark: #482f95;
     --accent-color-darkest: #231942;
-    --accent-color-green: #28eb76;
+    --accent-color-green: #f1ec81;
 
     --error-color: #f8bbd0;
     --error-color-border: #e63946;
