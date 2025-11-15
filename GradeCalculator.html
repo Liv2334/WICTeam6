@@ -32,7 +32,7 @@
             <div class="p_g_t">
                 <h2>Percentage - <span class="per"></span></h2>
                 <h2>Grade - <span class="gra"></span></h2>
-                <h2>Total - <span class=".to"></span></h2>
+                <h2>Total - <span class="to"></span></h2>
             </div>
         </div>
         <div class="content">
@@ -42,7 +42,7 @@
                 <input type="number" id="Fin" placeholder="Final">
                 <input type="number" id="Mid" placeholder="Midterms">
                 <input type="number" id="par" placeholder="Participation">
-                <button onclick="calculateGrade()">Calculate Grade</button>
+                <button onclick="CalculateGrade()">Calculate Grade</button>
             </div>
         </div>
         <div class="result">
@@ -50,15 +50,50 @@
         </div>
     </div>
     <script>
-        function calculateGrade(){
+        function CalculateGrade(){
             let a = document.querySelector ("#a").value;
             let pr = document.querySelector("#pr").value;
             let Fin = document.querySelector("#Fin").value;
             let Mid = document.querySelector("#Mid").value;
             let par = document.querySelector("#par").value;
 
-            let to = parseFloat(c) + parseFloat(pr) + parseFloat(Fin) + parseFloat(Mid) + parseFloat(par);
-            document.querySelector ('.to').innerHTML = to;
+            let to = parseFloat(a) + parseFloat(pr) + parseFloat(Fin) + parseFloat(Mid) + parseFloat(par);
+            
+            let per = (to*100)/500;
+            if(per>=98){
+                document.querySelecter(".gra").innerHTML = "A+";
+            }else if(per >=95){
+                document.querySelecter(".gra").innerHTML = "A";
+            }else if(per >=92){
+                document.querySelecter(".gra").innerHTML = "A-";
+            }else if(per >=88){
+                document.querySelecter(".gra").innerHTML = "B+";
+            }else if(per >=85){
+                document.querySelecter(".gra").innerHTML = "B";
+            }else if(per >=82){
+                document.querySelecter(".gra").innerHTML = "B-";
+            }else if(per >=78){
+                document.querySelecter(".gra").innerHTML = "C+";
+            }else if(per >=75){
+                document.querySelecter(".gra").innerHTML = "C";
+            }else if(per >=72){
+                document.querySelecter(".gra").innerHTML = "C-";
+            }else if(per >=68){
+                document.querySelecter(".gra").innerHTML = "D+";
+            }else if(per >=65){
+                document.querySelecter(".gra").innerHTML = "D";
+            }else if(per >=62){
+                document.querySelecter(".gra").innerHTML = "D-";
+            }else if(per >= 50){
+                document.querySelecter(".gra").innerHTML = "F";
+            }else{
+                document.querySelector(".gra").innerHTML = "Failed";
+            }
+            document.querySelector('.to').innerHTML = to;
+            document.querySelector(".per").innerHTML = per;
+            if(per > 50){
+                document.querySelector('.result h2').innerHTML = "Passed";
+            }
         }
     
     </script>
