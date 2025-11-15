@@ -5,7 +5,7 @@ body {
 
     font-size: 16px;
     color: var(--text-color);
-    font-family: Tahoma, sans-serif; 
+    font-family: Verdana, Tahoma, sans-serif; 
     margin: 50px;
 }
 
@@ -35,7 +35,7 @@ button:hover {
 .container{
     width: 700px;
     height: 500px;
-    background: #476993;
+    background: #f76c6c;
     border-radius: 10px;
     box-shadow: 0 10px 10px 0 #000;
 }
@@ -44,7 +44,7 @@ button:hover {
     position: absolute;
     width: 250px;
     height: 400px;
-    background: #476993;
+    background: #f76c6c;
     border-radius: 10px 0 0 10px;
 }
 
@@ -52,7 +52,7 @@ button:hover {
     margin-top: 20px;
     text-align: center;
     font-size: 2.5rem;
-    color: #7195c1;
+    color: #374785;
     font-weight: 900;
     letter-spacing: 2px;
 }
@@ -67,7 +67,7 @@ button:hover {
 .p_g_t h2{
     font-size: 1.3rem;
     font-weight: 500;
-    color: #7195c1; 
+    color: #374785; 
     margin: 20px 0;
 }
 
@@ -94,8 +94,8 @@ button:hover {
 .right_side button{
     width: 150px;
     height: 40px;
-    background: #f0e092;
-    color: #476993;
+    background: #f8e9a1;
+    color: #a8d0e6;
     margin-top: 10px;
     border: none;
     outline: none;
@@ -110,7 +110,7 @@ button:hover {
     bottom: 133px;
     width: 250px;
     height: 150px;
-    background: #476993;
+    background: #f76c6c;
     border-radius: 0 0 0 10px;
 }
 
@@ -118,24 +118,24 @@ button:hover {
     text-align: center;
     line-height: 50px;
     font-size: 1.3rem;
-    color: #7195c1;
+    color: #374785;
     font-weight: 900;
     letter-spacing: 2px;
 }
 
 :root {
     
-    --bg-color: #dae1f0;
-    --text-color: #5d85ad;
+    --bg-color: #a8d0e6;
+    --text-color: #374785;
 
-    --bg-color-dark-mode: #2c436b;
-    --text-color-dark-mode: #d2d6e0;
+    --bg-color-dark-mode: #24305e;
+    --text-color-dark-mode: #a8d0e6;
 
-    --accent-color-light: #c6c4d7;
-    --accent-color-medium: #585a9d;
-    --accent-color-dark: #2f467b;
-    --accent-color-darkest: #27375f;
-    --accent-color-yellow: #f5f1a6;
+    --accent-color-light: #a8d0e6;
+    --accent-color-medium: #f76c6c;
+    --accent-color-dark: #374785;
+    --accent-color-darkest: #24305e;
+    --accent-color-yellow: #f8e9a1;
 
     --error-color: #f8bbd0;
     --error-color-border: #e63946;
