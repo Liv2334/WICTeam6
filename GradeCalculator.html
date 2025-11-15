@@ -3,16 +3,14 @@
 <head>
         <meta charset="UTF-8">
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Project Title</title>
         <title>Grade Calculator</title>
-   	   <link rel="stylesheet" href="style.css" type=”text/css”/>
+   	   <link rel="stylesheet" href="style.css" />
         <link rel="icon" href="" type="image/x-icon" />
         <script type="text/javascript" src="script.js"></script>
     </head>
 
 
     <body>
-        <!-- Add HTML markup elements for your web site below -->
         <h1>Welcome to the Grade Calculator!</h1>
         <h3>Here you can put in your grades for your classes, and it will calculate your final grade!</h3>
 
@@ -28,16 +26,13 @@
 </html>
 
 
-        <h1>Grade Calculator</h1>
-        <p>Here are some more details.</p>
-
     <div class="container">
         <div class="left_side">
             <h1>Result</h1>
             <div class="p_g_t">
                 <h2>Percentage - <span class="per"></span></h2>
                 <h2>Grade - <span class="gra"></span></h2>
-                <h2>Total - <span class="to"></span></h2>
+                <h2>Total - <span class=".to"></span></h2>
             </div>
         </div>
         <div class="content">
@@ -47,12 +42,25 @@
                 <input type="number" id="Fin" placeholder="Final">
                 <input type="number" id="Mid" placeholder="Midterms">
                 <input type="number" id="par" placeholder="Participation">
+                <button onclick="calculateGrade()">Calculate Grade</button>
             </div>
         </div>
         <div class="result">
-             <button onclick="calculateGrade()">Calculate Grade</button>
              <h2></h2>
         </div>
     </div>
+    <script>
+        function calculateGrade(){
+            let a = document.querySelector ("#a").value;
+            let pr = document.querySelector("#pr").value;
+            let Fin = document.querySelector("#Fin").value;
+            let Mid = document.querySelector("#Mid").value;
+            let par = document.querySelector("#par").value;
+
+            let to = parseFloat(c) + parseFloat(pr) + parseFloat(Fin) + parseFloat(Mid) + parseFloat(par);
+            document.querySelector ('.to').innerHTML = to;
+        }
+    
+    </script>
 </body>
 </html>

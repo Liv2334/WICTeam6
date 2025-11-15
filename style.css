@@ -32,7 +32,15 @@ button:hover {
     margin: 10px;
 }
 
-
+.container{
+    background:#3c6893;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
 :root {
     
     --bg-color: #b0c7f8;
