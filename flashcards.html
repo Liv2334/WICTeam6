@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Flashcard Maker</title>
+
+<!-- Cute Game Font -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'Press Start 2P', cursive;
+        background: #ffe6f2;
+        color: #b84d7a;
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        line-height: 1.6;
+    }
+
+    h1, h2 {
+        text-align: center;
+        color: #ff7fbf;
+        text-shadow: 2px 2px #fff;
+    }
+
+    #creator {
+        margin-bottom: 25px;
+        padding: 20px;
+        border: 3px solid #ffb6d9;
+        border-radius: 15px;
+        background: #fff0f7;
+        box-shadow: 0px 0px 10px rgba(255, 182, 217, 0.7);
+    }
+
+    input, textarea {
+        width: 100%;
+        margin: 10px 0 20px;
+        padding: 10px;
+        font-size: 14px;
+        font-family: 'Press Start 2P', cursive;
+        border: 2px solid #ffb6d9;
+        border-radius: 10px;
+        background: #fff7fc;
+        color: #b84d7a;
+        resize: none;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 14px;
+        font-family: 'Press Start 2P', cursive;
+        background: #ff9fc9;
+        border: 3px solid #ff7fbf;
+        color: white;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 3px 3px 0 #ff7fbf;
+        transition: 0.1s ease;
+    }
+
+    button:hover {
+        background: #ff7fbf;
+    }
+
+    button:active {
+        box-shadow: none;
+        transform: translate(3px, 3px);
+    }
+
+    .flashcard {
+        border: 3px solid #ffb6d9;
+        padding: 20px;
+        border-radius: 15px;
+        margin: 15px 0;
+        background: #fff0f7;
+        box-shadow: 0px 0px 10px rgba(255, 182, 217, 0.7);
+        position: relative;
+    }
+
+    .question {
+        font-weight: bold;
+        cursor: pointer;
+        color: #ff5fa8;
+        margin-bottom: 10px;
+    }
+
+    .answer {
+        margin-top: 10px;
+        display: none;
+        color: #b84d7a;
+    }
+
+    .deleteBtn {
+        background: #ff7f7f;
+        border: 3px solid #ff4d6d;
+        color: white;
+        float: right;
+        padding: 5px 10px;
+        border-radius: 10px;
+        font-size: 12px;
+        box-shadow: 2px 2px 0 #ff4d6d;
+    }
+
+    .deleteBtn:hover {
+        background: #ff4d6d;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Flashcard Maker</h1>
+
+<!-- Flashcard Creator -->
+<div id="creator">
+    <h2>Create a Flashcard</h2>
+
+    <label>Question:</label>
+    <textarea id="questionInput"></textarea>
+
+    <label>Answer:</label>
+    <textarea id="answerInput"></textarea>
+
+    <button onclick="addFlashcard()">Add Flashcard</button>
+</div>
+
+<h2>Your Flashcards</h2>
+<div id="flashcards"></div>
+
+<script>
+// Load previously saved flashcards
+let flashcards = JSON.parse(localStorage.getItem("flashcards") || "[]");
+renderFlashcards();
+
+// Add a new flashcard
+function addFlashcard() {
+    const q = document.getElementById("questionInput").value.trim();
+    const a = document.getElementById("answerInput").value.trim();
+
+    if (!q || !a) {
+        alert("Please fill out both fields.");
+        return;
+    }
+
+    flashcards.push({ question: q, answer: a });
+    saveFlashcards();
+    renderFlashcards();
+
+    document.getElementById("questionInput").value = "";
+    document.getElementById("answerInput").value = "";
+}
+
+// Save to browser storage
+function saveFlashcards() {
+    localStorage.setItem("flashcards", JSON.stringify(flashcards));
+}
+
+// Render all flashcards
+function renderFlashcards() {
+    const container = document.getElementById("flashcards");
+    container.innerHTML = "";
+
+    flashcards.forEach((card, index) => {
+        const div = document.createElement("div");
+        div.className = "flashcard";
+
+        div.innerHTML = `
+            <button class="deleteBtn" onclick="deleteFlashcard(${index})">X</button>
+            <div class="question" onclick="toggleAnswer(${index})">
+                ${card.question}
+            </div>
+            <div class="answer" id="answer-${index}">
+                ${card.answer}
+            </div>
+        `;
+
+        container.appendChild(div);
+    });
+}
+
+// Show/hide answer
+function toggleAnswer(i) {
+    const ans = document.getElementById("answer-" + i);
+    ans.style.display = ans.style.display === "block" ? "none" : "block";
+}
+
+// Delete flashcard
+function deleteFlashcard(i) {
+    if (confirm("Delete this flashcard?")) {
+        flashcards.splice(i, 1);
+        saveFlashcards();
+        renderFlashcards();
+    }
+}
+</script>
+
+</body>
+</html>
+
+
