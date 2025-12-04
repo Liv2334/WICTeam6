@@ -10,8 +10,8 @@
 <style>
     body {
         font-family: 'Press Start 2P', cursive;
-        background: #ffe6f2;
-        color: #b84d7a;
+        background: #e6f3ff; /* soft pastel blue */
+        color: #3a5f8a;
         max-width: 800px;
         margin: auto;
         padding: 20px;
@@ -20,17 +20,17 @@
 
     h1, h2 {
         text-align: center;
-        color: #ff7fbf;
-        text-shadow: 2px 2px #fff;
+        color: #6cb6ff;
+        text-shadow: 2px 2px #ffffff;
     }
 
     #creator {
         margin-bottom: 25px;
         padding: 20px;
-        border: 3px solid #ffb6d9;
+        border: 3px solid #a8d4ff;
         border-radius: 15px;
-        background: #fff0f7;
-        box-shadow: 0px 0px 10px rgba(255, 182, 217, 0.7);
+        background: #f0f8ff;
+        box-shadow: 0px 0px 10px rgba(168, 212, 255, 0.7);
     }
 
     input, textarea {
@@ -39,10 +39,10 @@
         padding: 10px;
         font-size: 14px;
         font-family: 'Press Start 2P', cursive;
-        border: 2px solid #ffb6d9;
+        border: 2px solid #a8d4ff;
         border-radius: 10px;
-        background: #fff7fc;
-        color: #b84d7a;
+        background: #f8fbff;
+        color: #3a5f8a;
         resize: none;
     }
 
@@ -50,17 +50,17 @@
         padding: 12px 20px;
         font-size: 14px;
         font-family: 'Press Start 2P', cursive;
-        background: #ff9fc9;
-        border: 3px solid #ff7fbf;
+        background: #94c9ff;
+        border: 3px solid #6cb6ff;
         color: white;
         border-radius: 12px;
         cursor: pointer;
-        box-shadow: 3px 3px 0 #ff7fbf;
+        box-shadow: 3px 3px 0 #6cb6ff;
         transition: 0.1s ease;
     }
 
     button:hover {
-        background: #ff7fbf;
+        background: #6cb6ff;
     }
 
     button:active {
@@ -69,41 +69,41 @@
     }
 
     .flashcard {
-        border: 3px solid #ffb6d9;
+        border: 3px solid #a8d4ff;
         padding: 20px;
         border-radius: 15px;
         margin: 15px 0;
-        background: #fff0f7;
-        box-shadow: 0px 0px 10px rgba(255, 182, 217, 0.7);
+        background: #f0f8ff;
+        box-shadow: 0px 0px 10px rgba(168, 212, 255, 0.7);
         position: relative;
     }
 
     .question {
         font-weight: bold;
         cursor: pointer;
-        color: #ff5fa8;
+        color: #5aa7ff;
         margin-bottom: 10px;
     }
 
     .answer {
         margin-top: 10px;
         display: none;
-        color: #b84d7a;
+        color: #3a5f8a;
     }
 
     .deleteBtn {
-        background: #ff7f7f;
-        border: 3px solid #ff4d6d;
+        background: #6fa8ff;
+        border: 3px solid #3e82d9;
         color: white;
         float: right;
         padding: 5px 10px;
         border-radius: 10px;
         font-size: 12px;
-        box-shadow: 2px 2px 0 #ff4d6d;
+        box-shadow: 2px 2px 0 #3e82d9;
     }
 
     .deleteBtn:hover {
-        background: #ff4d6d;
+        background: #3e82d9;
     }
 </style>
 </head>
@@ -197,5 +197,3 @@ function deleteFlashcard(i) {
 
 </body>
 </html>
-
-
