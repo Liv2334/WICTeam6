@@ -1,11 +1,9 @@
 
 body {
-    
     background-color: var(--bg-color); 
-
     font-size: 16px;
     color: var(--text-color);
-    font-family: Verdana, Tahoma, sans-serif; 
+    font-family: Tahoma, Serif-Sans;
     margin: 50px;
 }
 
@@ -35,8 +33,8 @@ button:hover {
 
 :root {
     
-    --bg-color: #a8d0e6;
-    --text-color: #374785;
+    --bg-color: #e6f3ff;
+    --text-color: #6cb6ff;
 
     --bg-color-dark-mode: #24305e;
     --text-color-dark-mode: #a8d0e6;
