@@ -1,22 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+ <meta charset="UTF-8">
+ <title>Habit Tracker</title>
+ <style>
+   body {
+     font-family: Arial, sans-serif;
+     background: #f4f6ff;
+     display: flex;
+     justify-content: center;
+     align-items: flex-start;
+     height: 100vh;
+     padding-top: 40px;
+   }
+
+
+   .container {
+     background: white;
+     padding: 20px 30px;
+     border-radius: 10px;
+     width: 350px;
+     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+   }
+
+
+   h1 {
+     text-align: center;
+     color: #4a6eff;
+   }
+
+
+   .add-habit {
+     display: flex;
+     gap: 10px;
+     margin-bottom: 20px;
+   }
+
+
+   #habitInput {
+     flex: 1;
+     padding: 8px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+   }
+
+
+   #addBtn {
+     background: #4a6eff;
+     color: white;
+     border: none;
+     padding: 8px 12px;
+     border-radius: 5px;
+     cursor: pointer;
+   }
+
+
+   ul {
+     list-style: none;
+     padding: 0;
+   }
+
+
+   .habit-item {
+     background: #edf0ff;
+     padding: 10px;
+     border-radius: 6px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 8px;
+   }
+ </style>
 </head>
 <body>
-    
-
-<a href="index.html">
-<button class="header item" type="button">back</button>
-</a>
 
 
+ <div class="container">
+   <h1>Habit Tracker</h1>
 
 
+   <div class="add-habit">
+     <input id="habitInput" type="text" placeholder="Enter a new habit..." />
+     <button id="addBtn">Add</button>
+   </div>
 
 
+   <ul id="habitList"></ul>
+ </div>
 
+
+ <script>
+   const habitInput = document.getElementById("habitInput");
+   const addBtn = document.getElementById("addBtn");
+   const habitList = document.getElementById("habitList");
+
+
+   // load saved habits from local storage
+   let habits = JSON.parse(localStorage.getItem("habits")) || [];
+
+
+   function todayDate() {
+     return new Date().toISOString().split("T")[0];
+   }
+
+
+   function renderHabits() {
+     habitList.innerHTML = "";
+     habits.forEach((habit, index) => {
+       const li = document.createElement("li");
+       li.className = "habit-item";
+
+
+       const label = document.createElement("span");
+       label.textContent = `${habit.name} — 🔥 Streak: ${habit.streak}`;
+
+
+       const checkbox = document.createElement("input");
+       checkbox.type = "checkbox";
+       checkbox.checked = habit.lastCompleted === todayDate();
+
+
+       // when checkbox changes, update streak
+       checkbox.addEventListener("change", () => {
+         if (checkbox.checked && habit.lastCompleted !== todayDate()) {
+           habit.streak++;
+           habit.lastCompleted = todayDate();
+         }
+         localStorage.setItem("habits", JSON.stringify(habits));
+         renderHabits();
+       });
+
+
+       li.appendChild(label);
+       li.appendChild(checkbox);
+       habitList.appendChild(li);
+     });
+   }
+
+
+   addBtn.addEventListener("click", () => {
+     const name = habitInput.value.trim();
+     if (name) {
+       habits.push({ name, streak: 0, lastCompleted: null });
+       habitInput.value = "";
+       localStorage.setItem("habits", JSON.stringify(habits));
+       renderHabits();
+     }
+   });
+
+
+   renderHabits();
+ </script>
 </body>
 </html>
