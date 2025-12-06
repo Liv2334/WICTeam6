@@ -8,12 +8,20 @@ body {
 }
 
 button {
-    background-color: rgb(246, 240, 174);    
-    color: rgb(150, 186, 209);              
-    border: none;             
-    padding: 5px 12px;         
-    border-radius: 5px;         
-    cursor: pointer;           
+    padding: 8px 10px;
+    font-size: 10px;
+    font-family: 'Press Start 2P', cursive;
+    background: #f8e9a1;
+    border: 3px solid #e2cf72;
+    color: #99c8e1;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #e2cf72;
+    transition: 0.1s ease; 
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;  
+   
 }
 
 button:hover {
