@@ -9,15 +9,24 @@
 
 <style>
     body {
+
         background-color: #e6f3ff;
         font-family: Arial, sans-serif;
         color: #3a5f8a;
         margin: 20px;
     }
 
+    h1.main-title {
+        font-family: 'Press Start 2P', cursive;
+        color: #6cb6ff;
+        text-align: center;
+        text-shadow: 2px 2px #ffffff;
+    }
+
     h1, h2 {
         color: #6cb6ff;
         text-align: center;
+        text-shadow: 2px 2px #ffffff;
     }
 
     table {
@@ -120,11 +129,9 @@
 
 <body>
 
-<h1>Welcome to Your Planner!</h1>
+<h1 class = "main-title">Welcome to Your Planner!</h1>
 
 <h2>Plan your weekdays and weekend!</h2>
-
-<h2> </h2>
 
 <table>
     <thead>
@@ -153,7 +160,6 @@
     </tbody>
 </table>
 
-<!-- Flexbox container for Add/Clear buttons -->
 <div class="btn-row">
     <button onclick="addRow()">Add Time Row</button>
     <button onclick="clearAll()" class="clear-btn">Clear All</button>
